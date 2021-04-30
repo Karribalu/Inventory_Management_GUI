@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <style>
+           
+        .Description{
+          height: auto;
+          width: 1450px;
+        }
+        .Description p{
+          padding-left: 30px;
+          font-size: 25px;
+        }
+        </style>
+        <title>Subbu's Footwear</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-sm bg-primary navbar-dark" >
+       
+          
+         <a class="navbar-brand" href="/">Fashion Feet</a>
+          
+          <ul class="nav navbar-nav text-primary">
+            <li class="active nav-item"><a href="/" class = "nav-link ">Home</a></li>
+            <li class = "nav-item"><a href="/addItem" class = "nav-link">Add a New Item</a></li>
+            <li class = "nav-item"><a href="/updateStock" class = "nav-link">Update Stock</a></li>
+            <li class = "nav-item"><a href="/deleteStock" class = "nav-link">Delete Item</a></li>
+          </ul>
+        
+      </nav>
+      
+      <div class="data-accordion" style = "margin-top: 30px;margin-bottom: 30px;">
+        <h1 style = "margin-left: 10px; margin-bottom: 20px;">Description</h1>
+        <p class = "Description" style = "font-size: larger; line-height:35px;margin-left: 20px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+            Fashion Feet is established in the year 2013. We are the leading Manufacutrer of Embroidered Leather Footware,
+            Party wear,Leather foot wear,Gents leather,Slippers,Casual Slippers,Ladies leather slippers,Fancy leather slippers,
+            Leather Mens sandals, Roman leather sandals,Ladies leather sandals.Our enterprise is able to offer an exclusive range of
+            FlapFlops Sliper.
+                            Our offered range is available in different sizes, colors and designs as per the precise needs of the clients. Apart from this, we deliver the range within the promised
+            time frame to the clients.These sandals re available in various sizes and patterns as per latest fashion trend of the market. With the aid of our industrious workforce, we are offering Womens Leather Sandals to the clients.
+            Excellent quality leather accredited from our genuine vendors has been used for <thead>fabrication of the entire range of this Womens Leather Sandal</thead>
+
+        </p>
+  </div>
+  <p style = "font-size: 40px; font-weight: bold;">All the Stocks available for Women</p>
+        <div class="table-responsive">
+            <table class="table table-hover">
+              
+                <thead style = "background-color: aqua;">
+                  <tr>
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    
+                  <%for (var i = 0;i < data.length;i++){%>
+                   <% if(data[i].Gender === "F"){%>
+                    <tr>
+                        <td><%= data[i].pid %></td>
+                        <td><%= data[i].category %></td>
+                        <td><%= data[i].type %></td>
+                        <td><%= data[i].size %></td>
+                        <td><%= data[i].stock %></td>
+                        <td><%= data[i].sp %></td>
+                    </tr>
+                    <% }} %>
+                   
+                  
+                </tbody>
+              </table>
+        </div>
+        <p style = "font-size: 40px; font-weight: bold;">All the Stocks available for Men</p>
+        <div class="table-responsive">
+            <table class="table table-hover">
+              
+                <thead style = "background-color: aqua;">
+                  <tr>
+                    <th scope="col">Product ID</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Size</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    
+                  <%for (var i = 0;i < data.length;i++){%>
+                   <% if(data[i].Gender === "M"){%>
+                    <tr>
+                        <td><%= data[i].pid %></td>
+                        <td><%= data[i].category %></td>
+                        <td><%= data[i].type %></td>
+                        <td><%= data[i].size %></td>
+                        <td><%= data[i].stock %></td>
+                        <td><%= data[i].sp %></td>
+                    </tr>
+                    <% }} %>
+                   
+                  
+                </tbody>
+              </table>
+        </div>
+    </body>
+</html>
